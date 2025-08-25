@@ -1,0 +1,30 @@
+        .banner-container {
+            width: 100%;
+            display: flex;
+            gap: 4px;
+            overflow: hidden;
+        }
+        .banner-image {
+            width: 50%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            min-width: 0; 
+        }
+        
+        /* Đảm bảo banner luôn giữ tỷ lệ khi thu nhỏ */
+        @media (max-width: 768px) {
+            .banner-container {
+                gap: 3px; /* Giảm khoảng cách trên mobile */
+            }
+            .banner-image {
+                border-radius: 10px; /* Bo góc nhỏ hơn trên mobile */
+            }
+        }
+        
+        /* Cho màn hình rất nhỏ */
+        @media (max-width: 480px) {
+            .banner-image {
+                border-radius: 4px; 
+            }
+        }

@@ -1,0 +1,515 @@
+/* styles.css */
+:root {
+    --primary-color: #1d1d1f;
+    --secondary-color: #86868b;
+    --accent-color: #0071e3;
+    --accent-hover: #0077ed;
+    --light-bg: #fbfbfd;
+    --white: #ffffff;
+    --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --border-radius: 24px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --section-padding: 80px 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+/*    line-height: 1.6;*/
+    color: var(--primary-color);
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+}
+
+/*.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}*/
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+    color: var(--white);
+    padding: 135px 0 1px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+/*    background: url('images/apple-pattern.png') center/cover no-repeat;*/
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+.hero-logo img {
+    margin-bottom: 22px;
+    width: auto; 
+    height: 100px; 
+    border-radius: 22px;
+/*    filter: brightness(0) invert(1);*/
+}
+
+/* Brand Info Section */
+.brand-info {
+    padding: var(--section-padding);
+}
+
+.brand-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    align-items: center;
+    background: var(--white);
+    padding: 60px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.brand-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+/*    max-height: 289px;*/
+    object-fit: contain;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+    transition: var(--transition);
+}
+
+.brand-image:hover img {
+    transform: scale(1.05);
+}
+
+.brand-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.brand-content p {
+    margin-bottom: 2rem;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--secondary-color);
+}
+
+/* Section Headings */
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-heading h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+}
+
+.section-heading h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.section-heading p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Featured Products */
+.featured-products {
+    padding: var(--section-padding);
+    background: url('images/apple-bg-pattern.png') center/cover no-repeat;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.product-media {
+    height: 278px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, white 0%, white 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.product-media img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: var(--transition);
+    z-index: 1;
+}
+
+.product-card:hover .product-media img {
+    transform: scale(1.08);
+}
+
+.product-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.product-description {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 113, 227, 0.3);
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    padding: var(--section-padding);
+}
+
+.philosophy-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    align-items: center;
+    background: var(--white);
+    padding: 60px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, #0071e3, #5e9eff);
+}
+
+.philosophy-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.philosophy-text h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -0.03em;
+}
+
+.philosophy-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    margin-bottom: 1.8rem;
+    color: var(--secondary-color);
+}
+
+.philosophy-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.philosophy-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.philosophy-image:hover img {
+    transform: scale(1.03);
+}
+
+/* Info List */
+.info-list {
+    list-style-type: none;
+    margin: 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.info-item {
+    background: rgba(0, 113, 227, 0.05);
+    padding: 2rem;
+    border-radius: 16px;
+    border-left: 4px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 113, 227, 0.1);
+}
+
+.info-item strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+}
+
+.info-item span {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Milestones Section */
+.milestones-section {
+    border-radius: 50px;
+    margin-bottom: 30px;
+    padding: var(--section-padding);
+    background: linear-gradient(135deg, #dfe7f3 0%, #ffffff 100%);
+}
+
+.milestones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.milestone-card {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+}
+
+.milestone-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.milestone-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background: rgba(0, 113, 227, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.milestone-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+.milestone-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.milestone-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .section-heading h2 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 60px 0;
+    }
+    
+    .hero {
+        padding: 100px 0 80px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .brand-info-container,
+    .philosophy-container {
+        flex-direction: column;
+        padding: 40px;
+        text-align: center;
+    }
+    
+    .philosophy-container::before {
+        width: 100%;
+        height: 6px;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to right, #0071e3, #5e9eff);
+    }
+    
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 50px 0;
+        --border-radius: 18px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .brand-info-container,
+    .philosophy-container {
+        padding: 30px;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .milestones-grid {
+        grid-template-columns: 1fr;
+    }
+}
